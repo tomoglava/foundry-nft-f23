@@ -38,10 +38,7 @@ contract MoodNft is ERC721 {
 
     mapping(uint256 => Mood) private s_tokenIDtoMood;
 
-    constructor(
-        string memory sadSvgImgUri,
-        string memory happySvgImgUri
-    ) ERC721("Mood NFT", "MN") {
+    constructor(string memory sadSvgImgUri, string memory happySvgImgUri) ERC721("Mood NFT", "MN") {
         s_tokenCounter = 0;
         s_sadSVGImgUri = sadSvgImgUri;
         s_happySVGImgUri = happySvgImgUri;
@@ -57,9 +54,7 @@ contract MoodNft is ERC721 {
         return "data:application/json;base64,";
     }
 
-    function tokenURI(
-        uint256 tokenId
-    ) public view override returns (string memory) {
+    function tokenURI(uint256 tokenId) public view override returns (string memory) {
         string memory imageURI;
 
         if (s_tokenIDtoMood[tokenId] == Mood.HAPPY) {
@@ -68,23 +63,22 @@ contract MoodNft is ERC721 {
             imageURI = s_sadSVGImgUri;
         }
 
-        return
-            string(
-                abi.encodePacked(
-                    _baseURI(),
-                    Base64.encode(
-                        bytes(
-                            abi.encodePacked(
-                                '{"name": "',
-                                name(),
-                                '", "description": "An NFT that reflects the owners mood.", "atributes": [{"trait_type": "moodiness", "value": 100}], "image": ',
-                                imageURI,
-                                '"}'
-                            )
+        return string(
+            abi.encodePacked(
+                _baseURI(),
+                Base64.encode(
+                    bytes(
+                        abi.encodePacked(
+                            '{"name": "',
+                            name(),
+                            '", "description": "An NFT that reflects the owners mood.", "atributes": [{"trait_type": "moodiness", "value": 100}], "image": ',
+                            imageURI,
+                            '"}'
                         )
                     )
                 )
-            );
+            )
+        );
     }
 
     function gets_tokenCounter() public view returns (uint256) {

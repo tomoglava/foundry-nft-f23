@@ -5,8 +5,6 @@ import {BasicNFT} from "../src/BasicNFT.sol";
 import {Script} from "forge-std/Script.sol";
 
 contract DeployBasicNft is Script {
-
-
     function run() external returns (BasicNFT) {
         vm.startBroadcast();
         BasicNFT s_nft = new BasicNFT();
