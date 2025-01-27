@@ -1,0 +1,40 @@
+{
+    "name": "Super Cool NFT",
+    "description": "This is a unique NFT representing a digital artwork of a futuristic cityscape.",
+    "image": "ipfs://QmU8aTuc8YQ1PqL7LmJ6i7K26E4o7YrN2m2y9wz3a4c43U",
+    "attributes": [
+      {
+        "trait_type": "Background",
+        "value": "Night Sky"
+      },
+      {
+        "trait_type": "Building Style",
+        "value": "Futuristic"
+      },
+      {
+        "trait_type": "Lighting",
+        "value": "Neon"
+      }
+    ],
+    "external_url": "https://supercoolnft.com/nft/123",
+    "animation_url": "ipfs://QmZ4tDuvesekSs4qM5ZBKpXiZGun7SjkM7BSHGRNoPsALy",
+    "properties": {
+      "files": [
+        {
+          "uri": "ipfs://QmU8aTuc8YQ1PqL7LmJ6i7K26E4o7YrN2m2y9wz3a4c43U",
+          "type": "image/png"
+        },
+        {
+          "uri": "ipfs://QmZ4tDuvesekSs4qM5ZBKpXiZGun7SjkM7BSHGRNoPsALy",
+          "type": "video/mp4"
+        }
+      ],
+      "category": "image",
+      "creators": [
+        {
+          "address": "0xYourEthereumAddressHere",
+          "share": 100
+        }
+      ]
+    }
+  }
